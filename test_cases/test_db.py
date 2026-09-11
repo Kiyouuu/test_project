@@ -35,3 +35,14 @@ def test_api_db_employee(headers, base_url):
 
     # 8. 验证 API 和数据库的员工姓名一致
     assert api_name == db_result[0]["name"]
+
+def test_query_old_employee():
+    result = query(
+        "SELECT * FROM emp WHERE age > %s",
+        (50,)
+    )
+
+    assert len(result) > 0
+
+    for employee in result:
+        assert employee["age"] > 50
