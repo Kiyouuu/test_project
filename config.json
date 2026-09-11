@@ -1,0 +1,5 @@
+{
+    "base_url": "https://postman-echo.com",
+    "token": "abc123",
+    "login_data": "test_data/login_data.json"
+}
